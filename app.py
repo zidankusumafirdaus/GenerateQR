@@ -1,11 +1,12 @@
 from flask import Flask
-from qr import generate
+from apps.qr.qr import qr
 
 app = Flask(__name__)
+app.register_blueprint(qr, url_prefix="/user")
 
-@app.route('/barcode', methods=['GET', 'POST'])
-def barcode():
-    return generate()
+@app.route('/')
+def test():
+    return "Hello World"
 
 if __name__ == '__main__':
     app.run(debug=True)
