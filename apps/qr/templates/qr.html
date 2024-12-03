@@ -16,7 +16,7 @@
     <div class="generated">
         {% if data %}
             <h2>Your Generated QR Code:</h2>
-            <img src="{{ url_for('qr.static', filename=data) }}" alt="QR Code">
+            <img src="{{ url_for('qr.uploaded_file', filename=data) }}" alt="QR Code">
         {% endif %}
     </div>
 </body>
