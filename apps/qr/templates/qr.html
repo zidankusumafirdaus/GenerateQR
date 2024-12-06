@@ -14,8 +14,8 @@
         <button type="submit">Generate</button>
     </form>
     <form action="{{ url_for('qr.barcode') }}" method="POST">
-        <input type="number" name="WhatsAppNumber" placeholder="Masukkan nomor WA" required>
-        <input type="text" name="WhatsAppText" placeholder="Masukkan Text" required>
+        <input type="number" name="WANumber" placeholder="Masukkan nomor WA" required>
+        <input type="text" name="WAText" placeholder="Masukkan Text" required>
         <button type="submit">Generate</button>
     </form>
     <div class="generated">

@@ -11,24 +11,29 @@ os.makedirs(FolderUploads, exist_ok=True)
 @qr.route('/barcode', methods=['GET', 'POST'])
 def barcode():
     if request.method == 'POST':
-        # QR Code For URL
-        link = request.form['link']
-        QRGenerate = qrcode.make(link)
-
-        safe_link = hashlib.md5(link.encode()).hexdigest() 
-        qrSave = os.path.join(FolderUploads, f"{safe_link}.png")
-        QRGenerate.save(qrSave)
-
-
-        # QR Code For WhatsApp
-        WhatsAppNumber = request.form['WhatsAppNumber']
-        WhatsAppMessage = request.form['WhatsAppText']
-        WhatsAppURL = f"https://wa.me/{WhatsAppNumber}?text={WhatsAppMessage}"
+        if 'link' in request.form:
+            # QR Code For URL
+            link = request.form['link']
+            QRGenerate = qrcode.make(link)
+            
+            safe_link = hashlib.md5(link.encode()).hexdigest() 
+            qrSave = os.path.join(FolderUploads, f"{safe_link}.png")
+            QRGenerate.save(qrSave)
+            return render_template('qr.html', data=f"{safe_link}.png")
         
-
-        
-        return render_template('qr.html', data=f"{safe_link}.png")
+        elif 'WANumber' in request.form and 'WAText' in request.form:
+            # QR Code For WhatsApp
+            WANumber = request.form['WANumber']
+            WAMessage = request.form['WAText']
+            WhatsAppURL = f"https://wa.me/{WANumber}?text={WAMessage}"
+            QRGenerate = qrcode.make(WhatsAppURL)
+            
+            safe_link = hashlib.md5(WhatsAppURL.encode()).hexdigest()
+            qrSave = os.path.join(FolderUploads, f"{safe_link}.png")
+            QRGenerate.save(qrSave)
+            return render_template('qr.html', data=f"{safe_link}.png")
     return render_template('qr.html', data=None)
+
 
 @qr.route('/uploads/<path:filename>')
 def uploaded_file(filename):
