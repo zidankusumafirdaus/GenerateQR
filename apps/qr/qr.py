@@ -24,9 +24,10 @@ def barcode():
         
         elif 'WANumber' in request.form and 'WAText' in request.form:
             # QR Code For WhatsApp
-            country_code = request.form['country']
+            country_code = request.form.get('CodeCountry')
             WANumber = request.form['WANumber']
             WAMessage = request.form['WAText']
+
             WhatsAppURL = f"https://wa.me/{country_code}{WANumber}?text={WAMessage}"
             QRGenerate = qrcode.make(WhatsAppURL)
             
