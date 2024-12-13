@@ -15,7 +15,13 @@
     <!-- QR Code for link -->
     <section>
       <form action="{{ url_for('qr.barcode') }}" method="POST">
-        <input type="url" name="link" placeholder="Masukkan URL" required />
+        <input
+          type="url"
+          name="link"
+          id="link"
+          placeholder="Masukkan URL"
+          required
+        />
         <button type="submit">Generate</button>
       </form>
     </section>
@@ -34,12 +40,50 @@
         <input
           type="number"
           name="WANumber"
+          id="WANumber"
           placeholder="Masukkan nomor WA"
           required
         />
-        <input type="text" name="WAText" placeholder="Masukkan Text" required />
+        <input
+          type="text"
+          name="WAText"
+          id="WAText"
+          placeholder="Masukkan Text"
+          required
+        />
         <button type="submit">Generate</button>
       </form>
+    </section>
+
+    <!-- QR Code for Gmail -->
+    <section>
+      <form action="{{ url_for('qr.barcode') }}" method="POST">
+        <input
+          type="email"
+          id="GmailAddress"
+          name="GmailAddress"
+          placeholder="Masukkan Email Address"
+          required
+        />
+        <input
+          type="text"
+          id="GmailSubject"
+          name="GmailSubject"
+          placeholder="Masukkan Subject"
+          required
+        />
+        <textarea
+          id="GmailText"
+          name="GmailText"
+          placeholder="Masukkan Text"
+          required
+        ></textarea>
+        <button type="submit">Generate</button>
+      </form>
+    </section>
+
+    <!-- QR Generate -->
+    <section>
       <div class="generated">
         {% if data %}
         <h2>Your Generated QR Code:</h2>

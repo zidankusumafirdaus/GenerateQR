@@ -35,7 +35,20 @@ def barcode():
             qrSave = os.path.join(FolderUploads, f"{safe_link}.png")
             QRGenerate.save(qrSave)
             return render_template('qr.html', data=f"{safe_link}.png", countries=countries)
-    
+
+        elif 'GmailAddress' in request.form and 'GmailSubject' in request.form and 'GmailText' in request.form:
+            # QR Code For Gmail
+            GmailAddress = request.form['GmailAddress']
+            GmailSubject = request.form['GmailSubject']
+            GmailText = request.form['GmailText']
+
+            GmailURL = f"MATMSG:TO:{GmailAddress};SUB:{GmailSubject};BODY:{GmailText}"
+            QRGenerate = qrcode.make(GmailURL)
+
+            safe_link = hashlib.md5(GmailURL.encode()).hexdigest()
+            qrSave = os.path.join(FolderUploads, f"{safe_link}.png")
+            QRGenerate.save(qrSave)
+            return render_template('qr.html', data=f"{safe_link}.png", countries=countries)
     return render_template('qr.html', data=None, countries=countries)
 
 @qr.route('/uploads/<path:filename>')
