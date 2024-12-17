@@ -3,21 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>qr</title>
+    <title>QR Code Generator</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/qr.css') }}"
+      href="{{ url_for('qr.static', filename='css/qr.css') }}"
     />
+    <script
+      src="{{ url_for('qr.static', filename='js/qr.js') }}"
+      defer
+    ></script>
   </head>
   <body>
     <header>
-      <div class="huwa">
+      <div class="title">
         <h1>QR CODE GENERATOR: Muehehe</h1>
       </div>
     </header>
 
+    <div>
+      <button class="qr-button" data-target="link-section">QR for Link</button>
+      <button class="qr-button" data-target="whatsapp-section">
+        QR for WhatsApp
+      </button>
+      <button class="qr-button" data-target="gmail-section">
+        QR for Gmail
+      </button>
+    </div>
+
     <!-- QR Code for link -->
-    <section>
+    <section id="link-section" class="qr-section">
       <form action="{{ url_for('qr.barcode') }}" method="POST">
         <input
           type="url"
@@ -31,7 +45,7 @@
     </section>
 
     <!-- QR Code for WhatsApp -->
-    <section>
+    <section id="whatsapp-section" class="qr-section hidden">
       <form action="{{ url_for('qr.barcode') }}" method="POST">
         <select name="CodeCountry" id="CountrySelect">
           <option value="">-</option>
@@ -42,7 +56,7 @@
           {% endfor %}
         </select>
         <input
-          type="number"
+          type="tel"
           name="WANumber"
           id="WANumber"
           placeholder="Masukkan nomor WA"
@@ -60,7 +74,7 @@
     </section>
 
     <!-- QR Code for Gmail -->
-    <section>
+    <section id="gmail-section" class="qr-section hidden">
       <form action="{{ url_for('qr.barcode') }}" method="POST">
         <input
           type="email"
@@ -69,13 +83,8 @@
           placeholder="Masukkan Email Address"
           required
         />
-        <input
-          type="text"
-          id="GmailSubject"
-          name="GmailSubject"
-          placeholder="Masukkan Subject"
-          required
-        />
+        <input type="text id="GmailSubject" name="GmailSubject"
+        placeholder="Masukkan Subject" required />
         <textarea
           id="GmailText"
           name="GmailText"
