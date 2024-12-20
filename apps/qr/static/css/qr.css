@@ -18,7 +18,6 @@ header h1 {
 .MainButton {
   display: flex;
   justify-content: center;
-  margin-top: -8rem;
 }
 
 section {
@@ -29,8 +28,11 @@ section {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.card {
+  margin: -5rem 1rem;
+}
+
 button {
-  padding: 10px 15px;
   background-color: #09090b;
   color: white;
   border: none;

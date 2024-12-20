@@ -41,77 +41,79 @@
 
     <section class="MainButton">
       <!-- Buttton For Link -->
-      <button class="qr-button" data-target="link-section">
-        <div class="card" style="--active-color: #fef08a">
-          <pixel-canvas
-            data-gap="3"
-            data-speed="20"
-            data-colors="#fef08a, #fde047, #eab308"
-          ></pixel-canvas>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-link-2"
-          >
-            <path
-              d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"
-            ></path>
-            <line x1="8" y1="12" x2="16" y2="12"></line>
-          </svg>
-        </div>
+      <button
+        class="card qr-button"
+        data-target="link-section"
+        style="--active-color: #fef08a"
+      >
+        <pixel-canvas
+          data-gap="3"
+          data-speed="20"
+          data-colors="#fef08a, #fde047, #eab308"
+        ></pixel-canvas>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-link-2"
+        >
+          <path
+            d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"
+          ></path>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
       </button>
 
       <!-- Button For WhatsApp -->
-      <button class="qr-button" data-target="whatsapp-section">
-        <div class="card">
-          <pixel-canvas></pixel-canvas>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-brand-whatsapp"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-            <path
-              d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1"
-            />
-          </svg>
-        </div>
+      <button class="card qr-button" data-target="whatsapp-section">
+        <pixel-canvas></pixel-canvas>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-brand-whatsapp"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+          <path
+            d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1"
+          />
+        </svg>
       </button>
 
-      <button class="qr-button" data-target="gmail-section">
-        <div class="card" style="--active-color: #fecdd3">
-          <pixel-canvas
-            data-gap="6"
-            data-speed="80"
-            data-colors="#fecdd3, #fda4af, #e11d48"
-            data-no-focus
-          ></pixel-canvas>
-          <svg
-            class="hover-svg"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-          >
-            <path
-              d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-              fill="currentColor"
-            ></path>
-          </svg>
-        </div>
+      <button
+        class="card qr-button"
+        data-target="gmail-section"
+        style="--active-color: #fecdd3"
+      >
+        <pixel-canvas
+          data-gap="6"
+          data-speed="80"
+          data-colors="#fecdd3, #fda4af, #e11d48"
+          data-no-focus
+        ></pixel-canvas>
+        <svg
+          class="hover-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+            fill="currentColor"
+          ></path>
+        </svg>
       </button>
     </section>
 
