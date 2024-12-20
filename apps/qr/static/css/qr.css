@@ -14,17 +14,22 @@ header {
   color: #333;
 }
 
+.MainButton {
+  display: flex;
+  justify-content: center;
+}
+
 section {
   margin: 20px 0;
   padding: 20px;
-  background: #000000; /*background*/
+  background: #09090b; /*background*/
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button {
   padding: 10px 15px;
-  background-color: #010101;
+  background-color: #09090b;
   color: white;
   border: none;
   border-radius: 5px;
