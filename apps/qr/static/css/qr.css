@@ -1,22 +1,24 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
-  padding: 20px;
-  background-color: #f4f4f4;
+  padding: 0;
 }
 
-header {
+body {
+  font-family: "Inter", Helvetica, sans-serif;
+}
+
+header h1 {
+  font-family: "Inter", Helvetica, sans-serif;
+  margin-top: 3rem;
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.title h1 {
-  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .MainButton {
   display: flex;
   justify-content: center;
+  margin-top: -8rem;
 }
 
 section {
