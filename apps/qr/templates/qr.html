@@ -115,85 +115,86 @@
           ></path>
         </svg>
       </button>
+
+      <!-- QR Generate -->
+      <section>
+        <div class="generated">
+          {% if data %}
+          <h2>Your Generated QR Code:</h2>
+          <img
+            src="{{ url_for('qr.uploaded_file', filename=data) }}"
+            alt="QR Code"
+          />
+          {% endif %}
+        </div>
+      </section>
     </section>
 
-    <section class="QR"></section>
-    <!-- QR Code for link -->
-    <section id="link-section" class="qr-section">
-      <form action="{{ url_for('qr.barcode') }}" method="POST">
-        <input
-          type="url"
-          name="link"
-          id="link"
-          placeholder="Masukkan URL"
-          required
-        />
-        <button type="submit">Generate</button>
-      </form>
-    </section>
+    <section class="QR">
+      <!-- QR Code for link -->
+      <section id="link-section" class="qr-section">
+        <form action="{{ url_for('qr.barcode') }}" method="POST">
+          <input
+            type="url"
+            name="link"
+            id="link"
+            placeholder="Masukkan URL"
+            required
+          />
+          <button type="submit">Generate</button>
+        </form>
+      </section>
 
-    <!-- QR Code for WhatsApp -->
-    <section id="whatsapp-section" class="qr-section hidden">
-      <form action="{{ url_for('qr.barcode') }}" method="POST">
-        <select name="CodeCountry" id="CountrySelect">
-          <option value="">-</option>
-          {% for code in countries %}
-          <option value="{{ code.dial_code }}">
-            {{ code.name }} ({{ code.dial_code }})
-          </option>
-          {% endfor %}
-        </select>
-        <input
-          type="tel"
-          name="WANumber"
-          id="WANumber"
-          placeholder="Masukkan nomor WA"
-          required
-        />
-        <input
-          type="text"
-          name="WAText"
-          id="WAText"
-          placeholder="Masukkan Text"
-          required
-        />
-        <button type="submit">Generate</button>
-      </form>
-    </section>
+      <!-- QR Code for WhatsApp -->
+      <section id="whatsapp-section" class="qr-section hidden">
+        <form action="{{ url_for('qr.barcode') }}" method="POST">
+          <select name="CodeCountry" id="CountrySelect">
+            <option value="">-</option>
+            {% for code in countries %}
+            <option value="{{ code.dial_code }}">
+              {{ code.name }} ({{ code.dial_code }})
+            </option>
+            {% endfor %}
+          </select>
+          <input
+            type="tel"
+            name="WANumber"
+            id="WANumber"
+            placeholder="Masukkan nomor WA"
+            required
+          />
+          <input
+            type="text"
+            name="WAText"
+            id="WAText"
+            placeholder="Masukkan Text"
+            required
+          />
+          <button type="submit">Generate</button>
+        </form>
+      </section>
 
-    <!-- QR Code for Gmail -->
-    <section id="gmail-section" class="qr-section hidden">
-      <form action="{{ url_for('qr.barcode') }}" method="POST">
-        <input
-          type="email"
-          id="GmailAddress"
-          name="GmailAddress"
-          placeholder="Masukkan Email Address"
-          required
-        />
-        <input type="text id="GmailSubject" name="GmailSubject"
-        placeholder="Masukkan Subject" required />
-        <textarea
-          id="GmailText"
-          name="GmailText"
-          placeholder="Masukkan Text"
-          required
-        ></textarea>
-        <button type="submit">Generate</button>
-      </form>
-    </section>
-
-    <!-- QR Generate -->
-    <section>
-      <div class="generated">
-        {% if data %}
-        <h2>Your Generated QR Code:</h2>
-        <img
-          src="{{ url_for('qr.uploaded_file', filename=data) }}"
-          alt="QR Code"
-        />
-        {% endif %}
-      </div>
+      <!-- QR Code for Gmail -->
+      <section id="gmail-section" class="qr-section hidden">
+        <form action="{{ url_for('qr.barcode') }}" method="POST">
+          <input
+            type="email"
+            id="GmailAddress"
+            name="GmailAddress"
+            placeholder="Masukkan Email Address"
+            required
+          />
+          <input type="text id="GmailSubject" name="GmailSubject"
+          placeholder="Masukkan Subject" required />
+          <textarea
+            id="GmailText"
+            name="GmailText"
+            placeholder="Masukkan Text"
+            required
+          ></textarea>
+          <button type="submit">Generate</button>
+        </form>
+      </section>
     </section>
   </body>
 </html>

@@ -5,6 +5,7 @@
 
 body {
   font-family: "Inter", Helvetica, sans-serif;
+  display: flex;
 }
 
 header h1 {
@@ -18,12 +19,19 @@ header h1 {
 .MainButton {
   display: flex;
   justify-content: center;
+  margin-top: -2rem;
 }
 
+.QR {
+  display: flex;
+  justify-content: center;
+}
+
+/*background*/
 section {
   margin: 20px 0;
   padding: 20px;
-  background: #09090b; /*background*/
+  background: #09090b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
