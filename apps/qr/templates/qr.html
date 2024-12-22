@@ -117,15 +117,18 @@
       </button>
 
       <!-- QR Generate -->
-      <section>
-        <div class="generated">
-          {% if data %}
-          <h2>Your Generated QR Code:</h2>
-          <img
-            src="{{ url_for('qr.uploaded_file', filename=data) }}"
-            alt="QR Code"
-          />
-          {% endif %}
+      <section class="qr-generate">
+        <div class="qr-container">
+          <!-- Kontainer baru -->
+          <div class="generated">
+            {% if data %}
+            <img
+              src="{{ url_for('qr.uploaded_file', filename=data) }}"
+              alt="QR Code"
+            />
+            {% endif %}
+          </div>
+          <div class="qr-code"></div>
         </div>
       </section>
     </section>
@@ -133,15 +136,20 @@
     <section class="QR">
       <!-- QR Code for link -->
       <section id="link-section" class="qr-section">
-        <form action="{{ url_for('qr.barcode') }}" method="POST">
+        <form
+          action="{{ url_for('qr.barcode') }}"
+          class="formLink"
+          method="POST"
+        >
           <input
             type="url"
             name="link"
+            class="link"
             id="link"
             placeholder="Masukkan URL"
             required
           />
-          <button type="submit">Generate</button>
+          <button type="submit" class="buttonLink">Generate</button>
         </form>
       </section>
 
