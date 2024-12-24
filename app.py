@@ -2,7 +2,7 @@ from flask import Flask
 from apps.qr.qr import qr
 
 app = Flask(__name__)
-app.register_blueprint(qr, url_prefix="/user")
+app.register_blueprint(qr, url_prefix="/qr")
 
 @app.route('/')
 def test():
