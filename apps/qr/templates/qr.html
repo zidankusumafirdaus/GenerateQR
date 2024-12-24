@@ -155,8 +155,8 @@
 
       <!-- QR Code for WhatsApp -->
       <section id="whatsapp-section" class="qr-section hidden">
-        <form action="{{ url_for('qr.barcode') }}" method="POST">
-          <select name="CodeCountry" id="CountrySelect">
+        <form action="{{ url_for('qr.barcode') }}" class="formwa" method="POST">
+          <select name="CodeCountry" class="CountrySelect" id="CountrySelect">
             <option value="">-</option>
             {% for code in countries %}
             <option value="{{ code.dial_code }}">
@@ -166,6 +166,7 @@
           </select>
           <input
             type="tel"
+            class="WANumber"
             name="WANumber"
             id="WANumber"
             placeholder="Masukkan nomor WA"
@@ -173,34 +174,47 @@
           />
           <input
             type="text"
+            class="WAText"
             name="WAText"
             id="WAText"
             placeholder="Masukkan Text"
             required
           />
-          <button type="submit">Generate</button>
+          <button type="submit" class="buttonWA">Generate</button>
         </form>
       </section>
 
       <!-- QR Code for Gmail -->
       <section id="gmail-section" class="qr-section hidden">
-        <form action="{{ url_for('qr.barcode') }}" method="POST">
+        <form
+          action="{{ url_for('qr.barcode') }}"
+          class="formGmail"
+          method="POST"
+        >
           <input
             type="email"
             id="GmailAddress"
+            class="GmailAddress"
             name="GmailAddress"
             placeholder="Masukkan Email Address"
             required
           />
-          <input type="text id="GmailSubject" name="GmailSubject"
-          placeholder="Masukkan Subject" required />
+          <input
+            type="text"
+            class="GmailSubject"
+            id="GmailSubject"
+            name="GmailSubject"
+            placeholder="Masukkan Subject"
+            required
+          />
           <textarea
             id="GmailText"
+            class="GmailText"
             name="GmailText"
             placeholder="Masukkan Text"
             required
           ></textarea>
-          <button type="submit">Generate</button>
+          <button type="submit" class="buttonGmail">Generate</button>
         </form>
       </section>
     </section>

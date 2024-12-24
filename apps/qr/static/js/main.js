@@ -1,3 +1,47 @@
+// JS for switch from blank square to image
+document.addEventListener("DOMContentLoaded", function () {
+  const generated = document.querySelector(".generated");
+  const qrCode = document.querySelector(".qr-code");
+
+  // Fungsi untuk mengupdate visibilitas
+  function updateVisibility() {
+    if (generated.children.length > 0) {
+      // Jika ada gambar di dalam .generated
+      generated.style.display = "flex";
+      qrCode.style.display = "none"; // Sembunyikan .qr-code
+    } else {
+      generated.style.display = "none"; // Sembunyikan .generated
+      qrCode.style.display = "flex"; // Tampilkan .qr-code
+    }
+  }
+
+  // Panggil fungsi untuk mengatur visibilitas saat halaman dimuat
+  updateVisibility();
+
+  // Anda bisa menambahkan event listener di sini untuk memanggil updateVisibility
+  // ketika form di-submit atau ketika QR code di-generate
+});
+
+// JS For QR
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".qr-button");
+  const sections = document.querySelectorAll(".qr-section");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const target = this.getAttribute("data-target");
+
+      sections.forEach((section) => {
+        if (section.id === target) {
+          section.classList.remove("hidden");
+        } else {
+          section.classList.add("hidden");
+        }
+      });
+    });
+  });
+});
+
 // JS For QR
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".qr-button");
