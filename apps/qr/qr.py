@@ -1,9 +1,8 @@
 import os
 import json
 import qrcode
-import hashlib
 from flask_bcrypt import Bcrypt
-from flask import Flask, request, render_template, Blueprint, send_from_directory
+from flask import request, render_template, Blueprint, send_from_directory
 
 qr = Blueprint("qr", __name__, static_folder="static", template_folder="templates")
 bcrypt = Bcrypt()
